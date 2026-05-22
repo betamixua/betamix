@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betamix — Професійні кормові добавки для тварин</title>
+  <meta name="description" content="Betamix — виробник професійних преміксів, БМВД та комбікормів для свиней. Доставка по всій Україні.">
+  <style>
+    :root {
+      --brand:      #1a7a38;
+      --brand-dark: #114d24;
+      --brand-mid:  #1f9244;
+      --brand-pale: #edf7f1;
+      --ink:        #111827;
+      --ink-2:      #374151;
+      --ink-3:      #6b7280;
+      --line:       #e5e7eb;
+      --bg:         #f9fafb;
+      --white:      #ffffff;
+      --radius:     12px;
+      --shadow-sm:  0 1px 4px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.05);
+      --shadow-md:  0 4px 8px rgba(0,0,0,.06), 0 12px 32px rgba(0,0,0,.08);
+      --max:        1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ════════════════════════════
+       HEADER
+    ════════════════════════════ */
+    .site-header {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .hdr-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 32px;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .hdr-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .hdr-logo img { height: 44px; width: auto; object-fit: contain; }
+    .hdr-logo-sep { width: 1px; height: 32px; background: var(--line); }
+    .hdr-logo-text { font-size: 13px; color: var(--ink-3); line-height: 1.4; max-width: 160px; }
+    .hdr-logo-text strong { display: block; color: var(--ink-2); font-size: 14px; }
+    .site-nav { display: flex; gap: 2px; }
+    .site-nav a {
+      font-size: 14px; font-weight: 500; color: var(--ink-2);
+      padding: 8px 14px; border-radius: 8px;
+      transition: color .15s, background .15s;
+    }
+    .site-nav a:hover { color: var(--brand); background: var(--brand-pale); }
+    .hdr-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .hdr-phone { font-size: 14px; font-weight: 600; color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
+    .hdr-phone svg { color: var(--brand); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 20px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      cursor: pointer; border: none; transition: .18s;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-primary:hover { background: var(--brand-dark); box-shadow: 0 4px 14px rgba(26,122,56,.35); }
+    .btn-ghost { background: transparent; color: var(--ink-2); border: 1.5px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-pale); }
+
+    /* ════════════════════════════
+       HERO
+    ════════════════════════════ */
+    .hero {
+      background: linear-gradient(118deg, #0c3d1d 0%, #175e30 45%, #1f8040 100%);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: 80px 32px 72px;
+      display: grid; grid-template-columns: 1fr 440px; gap: 64px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+      color: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 4px; padding: 5px 12px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; background: #6ee697; border-radius: 50%; flex-shrink: 0; }
+    .hero-title {
+      font-size: 52px; font-weight: 900; line-height: 1.06;
+      letter-spacing: -.5px; margin-bottom: 22px;
+    }
+    .hero-title em { font-style: normal; color: #7dffa0; }
+    .hero-desc { font-size: 17px; color: rgba(255,255,255,.78); max-width: 430px; margin-bottom: 36px; line-height: 1.65; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-hero { padding: 14px 28px; font-size: 15px; border-radius: 10px; }
+    .btn-hero-solid { background: #fff; color: var(--brand-dark); font-weight: 800; }
+    .btn-hero-solid:hover { background: #f0fdf4; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+    .btn-hero-outline { background: rgba(255,255,255,.1); color: #fff; border: 1.5px solid rgba(255,255,255,.3); }
+    .btn-hero-outline:hover { background: rgba(255,255,255,.18); }
+    .hero-stats { display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,.15); padding-top: 0; }
+    .hero-stat { flex: 1; padding: 20px 0; border-right: 1px solid rgba(255,255,255,.12); }
+    .hero-stat:last-child { border-right: none; padding-left: 28px; }
+    .hero-stat:first-child { padding-right: 28px; padding-left: 0; }
+    .hero-stat:not(:first-child):not(:last-child) { padding: 20px 28px; }
+    .hero-stat-n { font-size: 30px; font-weight: 900; color: #7dffa0; letter-spacing: -.5px; }
+    .hero-stat-l { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 2px; }
+    .hero-img-wrap {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+    .hero-img-wrap img { width: 100%; max-width: 320px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+
+    /* ════════════════════════════
+       SECTION LAYOUT
+    ════════════════════════════ */
+    .section { padding: 88px 32px; }
+    .section-alt { background: var(--bg); }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+    .sec-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--brand); margin-bottom: 14px;
+    }
+    .sec-eyebrow::before { content: ''; width: 16px; height: 2px; background: var(--brand); border-radius: 2px; }
+    .sec-title { font-size: 34px; font-weight: 900; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 14px; color: var(--ink); }
+    .sec-desc { font-size: 16px; color: var(--ink-3); max-width: 520px; line-height: 1.65; }
+    .sec-head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px; }
+    .sec-head-row .sec-desc { max-width: 440px; }
+
+    /* ════════════════════════════
+       ABOUT
+    ════════════════════════════ */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-body h3 { font-size: 32px; font-weight: 900; line-height: 1.15; margin-bottom: 18px; letter-spacing: -.3px; }
+    .about-body p { font-size: 15.5px; color: var(--ink-2); margin-bottom: 14px; line-height: 1.7; }
+    .about-items { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .about-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+    .about-item-icon { width: 36px; height: 36px; background: var(--brand-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .about-item-icon svg { width: 18px; height: 18px; stroke: var(--brand); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .about-item-text strong { font-size: 14px; font-weight: 700; display: block; margin-bottom: 2px; }
+    .about-item-text span { font-size: 13px; color: var(--ink-3); }
+    .about-visual { position: relative; }
+    .about-visual img { width: 100%; border-radius: 18px; box-shadow: var(--shadow-md); }
+    .about-badge {
+      position: absolute; bottom: -20px; left: -20px;
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 14px; padding: 16px 20px;
+      box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 14px;
+    }
+    .about-badge-icon { width: 44px; height: 44px; background: var(--brand); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .about-badge-icon svg { width: 22px; height: 22px; stroke: #fff; stroke-width: 2; fill: none; }
+    .about-badge strong { font-size: 18px; font-weight: 900; color: var(--ink); }
+    .about-badge span { font-size: 12px; color: var(--ink-3); display: block; }
+
+    /* ════════════════════════════
+       ADVANTAGES
+    ════════════════════════════ */
+    .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .adv-card {
+      padding: 28px; border-radius: var(--radius);
+      border: 1px solid var(--line); background: var(--white);
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .adv-card:hover { border-color: var(--brand); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .adv-icon { width: 48px; height: 48px; background: var(--brand-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .adv-icon svg { width: 22px; height: 22px; stroke: var(--brand); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .adv-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 8px; color: var(--ink); }
+    .adv-card p { font-size: 14px; color: var(--ink-3); line-height: 1.6; }
+
+    /* ════════════════════════════
+       PRODUCTS
+    ════════════════════════════ */
+    .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .pcard {
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--white); display: flex; flex-direction: column;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      overflow: hidden;
+    }
+    .pcard:hover { border-color: #b6d9c4; box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .pcard-img { background: #f4f6f4; height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .pcard-img img { height: 172px; width: auto; object-fit: contain; }
+    .pcard-avail { position: absolute; top: 10px; right: 10px; font-size: 11px; font-weight: 700; color: var(--brand); background: var(--brand-pale); border: 1px solid #c3e6cf; padding: 3px 10px; border-radius: 4px; letter-spacing: .3px; text-transform: uppercase; }
+    .pcard-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .pcard-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--brand); margin-bottom: 7px; }
+    .pcard-title { font-size: 16px; font-weight: 800; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+    .pcard-desc { font-size: 13px; color: var(--ink-3); margin-bottom: 18px; line-height: 1.55; }
+    .price-tbl { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+    .price-row { display: grid; grid-template-columns: 1fr auto; padding: 8px 12px; border-bottom: 1px solid var(--line); align-items: center; }
+    .price-row:last-child { border-bottom: none; }
+    .price-row.best { background: #f0faf4; }
+    .price-row .pt { font-size: 12.5px; color: var(--ink-3); }
+    .price-row.best .pt { color: var(--brand-dark); font-weight: 600; }
+    .price-row .pv { font-size: 14px; font-weight: 800; color: var(--brand); }
+    .price-row.best .pv { font-size: 15px; color: var(--brand-dark); }
+    .pcard-actions { margin-top: auto; display: flex; gap: 8px; }
+    .btn-wa-card {
+      flex: 1; background: var(--brand); color: #fff;
+      padding: 11px 14px; border-radius: 8px;
+      font-size: 13.5px; font-weight: 700; text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      transition: background .18s;
+    }
+    .btn-wa-card:hover { background: var(--brand-dark); }
+    .btn-wa-card svg { width: 16px; height: 16px; fill: #fff; flex-shrink: 0; }
+    .btn-tg-card {
+      background: var(--bg); color: #0088cc; border: 1px solid var(--line);
+      padding: 11px 13px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .18s, border-color .18s;
+    }
+    .btn-tg-card:hover { background: #e8f4ff; border-color: #b3d7f0; }
+    .btn-tg-card svg { width: 17px; height: 17px; stroke: #0088cc; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ════════════════════════════
+       CTA BAND
+    ════════════════════════════ */
+    .cta-band { background: var(--brand-dark); color: #fff; padding: 60px 32px; }
+    .cta-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-text h2 { font-size: 30px; font-weight: 900; margin-bottom: 8px; }
+    .cta-text p { font-size: 15px; color: rgba(255,255,255,.72); max-width: 480px; }
+    .cta-btns { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+    .btn-cta-wa { background: #25D366; color: #fff; padding: 14px 26px; font-size: 15px; border-radius: 10px; font-weight: 700; display: flex; align-items: center; gap: 9px; transition: .18s; }
+    .btn-cta-wa:hover { background: #1fb958; box-shadow: 0 6px 20px rgba(37,211,102,.4); }
+    .btn-cta-wa svg { width: 20px; height: 20px; fill: #fff; }
+    .btn-cta-tg { background: #229ED9; color: #fff; padding: 14px 26px; font-size: 15px; border-radius: 10px; font-weight: 700; display: flex; align-items: center; gap: 9px; transition: .18s; }
+    .btn-cta-tg:hover { background: #1a85bb; }
+    .btn-cta-tg svg { width: 18px; height: 18px; stroke: #fff; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .btn-cta-ph { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.25); padding: 14px 26px; font-size: 15px; border-radius: 10px; font-weight: 700; display: flex; align-items: center; gap: 9px; transition: .18s; }
+    .btn-cta-ph:hover { background: rgba(255,255,255,.2); }
+    .btn-cta-ph svg { width: 18px; height: 18px; stroke: #fff; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ════════════════════════════
+       CONTACTS
+    ════════════════════════════ */
+    .contacts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 0; }
+    .contact-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+    .contact-card-icon { width: 44px; height: 44px; background: var(--brand-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .contact-card-icon svg { width: 20px; height: 20px; stroke: var(--brand); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-card h4 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; color: var(--ink-3); margin-bottom: 6px; }
+    .contact-card p { font-size: 16px; font-weight: 700; color: var(--ink); }
+    .contact-card p a { color: var(--ink); transition: color .15s; }
+    .contact-card p a:hover { color: var(--brand); }
+    .contact-card small { font-size: 13px; color: var(--ink-3); display: block; margin-top: 4px; }
+
+    /* ════════════════════════════
+       FOOTER
+    ════════════════════════════ */
+    .site-footer { background: #0e1f14; color: rgba(255,255,255,.5); padding: 28px 32px; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13.5px; }
+    .footer-inner strong { color: rgba(255,255,255,.85); }
+    .footer-inner a { color: rgba(255,255,255,.5); transition: color .15s; }
+    .footer-inner a:hover { color: #fff; }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ════════════════════════════
+       FAB
+    ════════════════════════════ */
+    .fab { position: fixed; right: 20px; bottom: 20px; z-index: 999; display: flex; flex-direction: column; gap: 10px; }
+    .fab a { width: 50px; height: 50px; border-radius: 13px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(0,0,0,.22); transition: .18s; }
+    .fab a:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,.28); }
+    .fab-wa { background: #25D366; }
+    .fab-tg { background: #229ED9; }
+    .fab a svg { width: 24px; height: 24px; }
+
+    /* ════════════════════════════
+       RESPONSIVE
+    ════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 64px 32px; }
+      .hero-img-wrap { display: none; }
+      .hero-title { font-size: 42px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-badge { left: 10px; bottom: -16px; }
+      .adv-grid { grid-template-columns: repeat(2,1fr); }
+      .prod-grid { grid-template-columns: repeat(2,1fr); }
+      .contacts-grid { grid-template-columns: 1fr; }
+      .site-nav { display: none; }
+      .hdr-phone { display: none; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 64px 20px; }
+      .hero-inner { padding: 56px 20px 48px; }
+      .hero-title { font-size: 32px; }
+      .sec-title { font-size: 26px; }
+      .adv-grid, .prod-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 0; }
+      .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); padding: 16px 0 !important; }
+      .hero-stat:last-child { border-bottom: none; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+      .sec-head-row { flex-direction: column; align-items: flex-start; }
+      .footer-inner { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a href="#" class="hdr-logo">
+      <img src="Logo.png" alt="Betamix логотип">
+      <div class="hdr-logo-sep"></div>
+      <div class="hdr-logo-text">
+        <strong>Betamix</strong>
+        Кормові добавки для тварин
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="#about">Про компанію</a>
+      <a href="#advantages">Переваги</a>
+      <a href="#products">Каталог</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+    <div class="hdr-actions">
+      <a href="tel:+380756627832" class="hdr-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +380 75 662 78 32
+      </a>
+      <a href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BC%D0%BE%D0%B2%D0%B8%D1%82%D0%B8%20%D0%BF%D1%80%D0%B5%D0%BC%D1%96%D0%BA%D1%81%20Betamix." target="_blank" rel="noopener" class="btn btn-primary">Замовити</a>
+    </div>
+  </div>
+</header>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span></span>Офіційний постачальник по Україні</div>
+      <h1 class="hero-title">Професійні<br><em>премікси</em> для<br>відгодівлі тварин</h1>
+      <p class="hero-desc">Betamix — повний асортимент кормових добавок для свиней. Від стартового годування до фінішної відгодівлі.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-hero btn-hero-solid">Переглянути каталог</a>
+        <a href="https://wa.me/380756627832" target="_blank" rel="noopener" class="btn btn-hero btn-hero-outline">Замовити у WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-n">7+</div>
+          <div class="hero-stat-l">Позицій в асортименті</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">3</div>
+          <div class="hero-stat-l">Цінових рівні</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">UA</div>
+          <div class="hero-stat-l">Доставка по Україні</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="King.png" alt="Betamix — PROFESJONALNE ŻYWIENIE">
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT ════ -->
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="sec-eyebrow">Про компанію</div>
+        <h2 class="sec-title">Betamix — якість,<br>перевірена досвідом</h2>
+        <p>Ми постачаємо сертифіковані кормові добавки для свиноферм і приватних господарств. Асортимент включає премікси 2% і 4%, БМВД та гранульований комбікорм від перевіреного виробника.</p>
+        <p>Наша задача — забезпечити господарство правильним харчуванням на кожному етапі відгодівлі при оптимальних витратах.</p>
+        <div class="about-items">
+          <div class="about-item">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+            </div>
+            <div class="about-item-text">
+              <strong>Сертифікована продукція</strong>
+              <span>Відповідає стандартам якості для кормових добавок</span>
+            </div>
+          </div>
+          <div class="about-item">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="about-item-text">
+              <strong>Повний цикл відгодівлі</strong>
+              <span>Продукти для кожного етапу — від поросяти до дорослої свині</span>
+            </div>
+          </div>
+          <div class="about-item">
+            <div class="about-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="about-item-text">
+              <strong>Гнучкі умови постачання</strong>
+              <span>Великий опт, малий опт і роздріб з різними ціновими рівнями</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <img src="King.png" alt="Betamix — мішок преміксу">
+        <div class="about-badge">
+          <div class="about-badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>PROFESJONALNE</strong>
+            <span>ŻYWIENIE — Betamix®</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ADVANTAGES ════ -->
+<section id="advantages" class="section section-alt">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div>
+        <div class="sec-eyebrow">Переваги</div>
+        <h2 class="sec-title">Чому обирають Betamix</h2>
+      </div>
+      <p class="sec-desc">Збалансовані рецептури, доступні ціни та надійне постачання — три основи, на яких будується наша робота.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h4>Збалансований склад</h4>
+        <p>Вітаміни, мінерали та амінокислоти в пропорціях, розрахованих під конкретний вік і масу тварини.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h4>Прискорений приріст</h4>
+        <p>Правильне харчування скорочує строки відгодівлі та знижує витрати корму на одиницю приросту.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>Три рівні цін</h4>
+        <p>Опт від 5 т, малий опт від 1 т, роздріб — прозора цінова структура для будь-якого масштабу господарства.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h4>Доставка по Україні</h4>
+        <p>Відправляємо до будь-якого регіону. Уточнюйте умови та терміни для вашого напрямку у менеджера.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <h4>Повний асортимент</h4>
+        <p>Від преміксу для поросят стартової вагою до БМВД для свиноматок — все в одному місці.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h4>Консультація</h4>
+        <p>Менеджер підбере оптимальний продукт для вашого господарства. Зв'яжіться у будь-який зручний спосіб.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PRODUCTS ════ -->
+<section id="products" class="section">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div>
+        <div class="sec-eyebrow">Каталог</div>
+        <h2 class="sec-title">Асортимент продукції</h2>
+      </div>
+      <p class="sec-desc">Уточнюйте наявність і умови доставки для кожної позиції у нашого менеджера.</p>
+    </div>
+    <div class="prod-grid">
+
+      <!-- 1. Премікс 2% -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="Премікс 2%">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Премікс</div>
+          <h3 class="pcard-title">Премікс 2%</h3>
+          <p class="pcard-desc">Для поросят вагою 30–110 кг. Збалансований склад для активного росту та розвитку.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 350 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 450 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 650 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%9F%D1%80%D0%B5%D0%BC%D1%96%D0%BA%D1%81%202%25." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Премікс 4% -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="Премікс 4%">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Премікс</div>
+          <h3 class="pcard-title">Премікс 4%</h3>
+          <p class="pcard-desc">Для поросят більше 30 кг. Стимулює приріст та підтримує імунітет тварин.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 550 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 650 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 850 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%9F%D1%80%D0%B5%D0%BC%D1%96%D0%BA%D1%81%204%25." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Премікс для свиноматок 2,5% -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="Премікс для свиноматок 2,5%">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Премікс</div>
+          <h3 class="pcard-title">Премікс для свиноматок лактуючих 2,5%</h3>
+          <p class="pcard-desc">Спеціальна формула для лактуючих свиноматок. Підтримує молочність та здоров'я.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 630 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 730 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 830 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%9F%D1%80%D0%B5%D0%BC%D1%96%D0%BA%D1%81%20%D1%81%D0%B2%D0%B8%D0%BD%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BA%202.5%25." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Комбікорм -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="Комбікорм гранульований">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Комбікорм</div>
+          <h3 class="pcard-title">Комбікорм гранульований</h3>
+          <p class="pcard-desc">Готовий збалансований корм у формі гранул. Зручне згодовування, стабільне споживання.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 100 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 200 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 300 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%9A%D0%BE%D0%BC%D0%B1%D1%96%D0%BA%D0%BE%D1%80%D0%BC%20%D0%B3%D1%80%D0%B0%D0%BD%D1%83%D0%BB%D1%8C%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. БМВД 20% -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="БМВД 20%">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">БМВД</div>
+          <h3 class="pcard-title">БМВД 20%</h3>
+          <p class="pcard-desc">Для поросят 10–30 кг. Білково-мінерально-вітамінна добавка для стартового годування.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 070 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 170 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 270 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%91%D0%9C%D0%92%D0%94%2020%25." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. БМВД 15–30% -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="БМВД 15–30%">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">БМВД</div>
+          <h3 class="pcard-title">БМВД 15–30%</h3>
+          <p class="pcard-desc">Для відгодівлі свиней вагою до 130 кг. Підходить також для свиноматок.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 030 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 130 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 230 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%91%D0%9C%D0%92%D0%94%2015-30%25." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. БМВД для свиноматок 16% -->
+      <article class="pcard">
+        <div class="pcard-img">
+          <img src="King.png" alt="БМВД для свиноматок 16%">
+          <span class="pcard-avail">В наявності</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">БМВД</div>
+          <h3 class="pcard-title">БМВД для свиноматок 16%</h3>
+          <p class="pcard-desc">Спеціалізована добавка для підтримки здоров'я та продуктивності свиноматок.</p>
+          <div class="price-tbl">
+            <div class="price-row best"><span class="pt">Опт від 5 тон</span><span class="pv">1 150 грн</span></div>
+            <div class="price-row"><span class="pt">Малий опт від 1 т</span><span class="pv">1 250 грн</span></div>
+            <div class="price-row"><span class="pt">Роздріб</span><span class="pv">1 350 грн</span></div>
+          </div>
+          <div class="pcard-actions">
+            <a class="btn-wa-card" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%BB%D1%8E%20%D0%91%D0%9C%D0%92%D0%94%20%D1%81%D0%B2%D0%B8%D0%BD%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BA%2016%25." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+              Замовити
+            </a>
+            <a class="btn-tg-card" href="https://t.me/+380756627832" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA BAND ════ -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Готові зробити замовлення?</h2>
+      <p>Зв'яжіться з нами зручним способом — відповімо швидко, підберемо оптимальний продукт та узгодимо умови доставки.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BC%D0%BE%D0%B2%D0%B8%D1%82%D0%B8%20%D0%BF%D1%80%D0%B5%D0%BC%D1%96%D0%BA%D1%81%20Betamix." class="btn-cta-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://t.me/+380756627832" class="btn-cta-tg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Telegram
+      </a>
+      <a href="tel:+380756627832" class="btn-cta-ph">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +380 75 662 78 32
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CONTACTS ════ -->
+<section id="contacts" class="section section-alt">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div>
+        <div class="sec-eyebrow">Контакти</div>
+        <h2 class="sec-title">Як з нами зв'язатися</h2>
+      </div>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.02-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h4>Телефон</h4>
+        <p><a href="tel:+380756627832">+380 75 662 78 32</a></p>
+        <small>Дзвінки та WhatsApp</small>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h4>Електронна пошта</h4>
+        <p><a href="mailto:betamixua@gmail.com">betamixua@gmail.com</a></p>
+        <small>Для офіційних запитів</small>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h4>Веб-сайт</h4>
+        <p>www.betamix.ua</p>
+        <small>Офіційний сайт компанії</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© <span id="yr"></span> <strong>Betamix</strong>. Всі права захищені.</span>
+    <div class="footer-links">
+      <a href="tel:+380756627832">+380 75 662 78 32</a>
+      <a href="mailto:betamixua@gmail.com">betamixua@gmail.com</a>
+      <span>www.betamix.ua</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ FAB ════ -->
+<div class="fab">
+  <a class="fab-wa" href="https://wa.me/380756627832?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BC%D0%BE%D0%B2%D0%B8%D1%82%D0%B8%20%D0%BF%D1%80%D0%B5%D0%BC%D1%96%D0%BA%D1%81%20Betamix." target="_blank" rel="noopener" title="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9.4 3 4 8.2 4 14.7c0 2.4.7 4.6 2 6.6L5 29l7.8-2.6c1.9 1 4.1 1.6 6.3 1.6 6.6 0 12-5.2 12-11.7S22.6 3 16 3z"/></svg>
+  </a>
+  <a class="fab-tg" href="https://t.me/+380756627832" target="_blank" rel="noopener" title="Telegram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+  </a>
+</div>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
